@@ -49,10 +49,6 @@ body {
   font-size: 10px; text-transform: uppercase; letter-spacing: 1.4px;
   color: #ffffff; opacity: 0.55;
 }
-.hero-money {
-  font-family: 'Oswald', sans-serif; font-size: 34px;
-  color: var(--hot); margin-top: 2px;
-}
 .hero-rec { font-size: 12px; color: #ffffff; opacity: 0.7; margin-top: 6px; }
 .pnl-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
 .top-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
@@ -90,9 +86,14 @@ body {
 .bubble {
   display: inline-flex; align-items: center; justify-content: center; color: #ffffff;
   line-height: 1; border-radius: 4px; border: 2px solid #ffffff;
-  font-family: 'Oswald', sans-serif; font-weight: 400;
-  width: 34px; height: 26px; font-size: 13px; flex-shrink: 0;
+  font-family: 'Oswald', sans-serif; font-weight: 400; flex-shrink: 0;
 }
+.bub-hero { padding: 8px 24px 10px 18px; font-size: 44px; min-height: 56px; }
+.bub-lg28 { padding: 6px 10px; font-size: 24px; min-height: 34px; }
+.bub-md { padding: 5px 9px; font-size: 15px; min-height: 26px; }
+.bg-g { background: var(--win); }
+.bg-r { background: var(--loss); }
+.bg-n { background: var(--neutral); }
 .empty-state {
   background: var(--box-bg); border: 1px solid var(--box-line); border-radius: 8px;
   padding: 22px 14px; text-align: center; font-size: 13px; color: #ffffff; opacity: 0.72;
@@ -101,16 +102,15 @@ body {
 </style></head><body><div class='wrap'>
 <div class='header'><div class='header-title'>The Inside Rip</div>
 <div class='header-sport'>National Football League</div>
-<div class='header-date'>Thursday, August 27 &middot; 08:24 AM ET</div></div>
+<div class='header-date'>Thursday, August 27 &middot; 08:41 AM ET</div></div>
 <div id='tab-bar'>
 <div class='tab-off' data-tab='overview'>Overview</div>
 <div class='tab-off' data-tab='results'>Results</div>
 <div class='tab-on' data-tab='week'>This week</div></div>
 <div class='tab-content' id='tab-overview'>
 <div class='hero'><div class='hero-label'>Season units</div>
-<div class='hero-money'>+0.0</div>
-<div class='hero-rec'>0-0
- &middot; 0 open</div></div>
+<div><div class='hero-num' style='font-size:44px'>&mdash;</div></div>
+<div class='hero-rec'>0-0 &middot; 0 open</div></div>
 <div class='pnl-row'><div class='pnl-box' style='grid-column:1/-1'><div class='pnl-label'>By market</div><div class='pnl-rec'>Nothing settled yet.</div></div></div></div>
 <div class='tab-content' id='tab-results'><div class='empty-state'>Nothing settled yet.</div></div>
 <div class='tab-content active' id='tab-week'><div class='top-row'><div class='pnl-box'><div class='pnl-label'>On the board</div><div class='hero-num'>0</div></div><div class='pnl-box'><div class='pnl-label'>First kick</div><div class='hero-num' style='font-size:15px'>&mdash;</div></div></div><div class='empty-state'>Nothing on the board. A bet appears here when one is written; a game with no bet is tracked off the board, not on it.</div></div>
