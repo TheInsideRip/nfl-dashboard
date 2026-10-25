@@ -7,7 +7,7 @@
 <style>:root {
   --bg-main:#0e1c30; --bg-mid:#101f36; --bg-deep:#12233c;
   --bg-glow:rgba(61,111,158,0.32);
-  --panel:#16283f; --band:#16283f; --accent:#3d6f9e; --hot:#f0b840;
+  --panel:#16283f; --band:#24507d; --accent:#3d6f9e; --hot:#f0b840;
   --win:#2f9e5e; --loss:#c0392b; --neutral:#7d8b85;
   --card-bg:rgba(255,255,255,0.05); --card-line:rgba(255,255,255,0.17);
   --box-bg:rgba(255,255,255,0.06); --box-line:rgba(255,255,255,0.15);
@@ -21,33 +21,33 @@ body {
     linear-gradient(180deg, var(--bg-main) 0%, var(--bg-mid) 50%, var(--bg-deep) 100%);
   min-height: 100vh; background-attachment: fixed;
 }
-.wrap { max-width: 540px; margin: 0 auto; padding: 0 12px 40px; }
+.wrap { max-width: 540px; margin: 0 auto; padding: 0 16px 40px; }
 .header { padding: 24px 16px 0; text-align: center; }
 .header-title {
   font-family: 'Oswald', sans-serif; font-size: 36px; font-weight: 400;
-  letter-spacing: 1px; text-transform: uppercase; color: #ffffff;
+  letter-spacing: 4px; text-transform: uppercase; line-height: 1.2; color: #ffffff;
 }
 .header-sport {
-  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--accent); margin-top: 2px;
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--accent); margin-top: 4px;
 }
-.header-date { font-size: 11px; color: #ffffff; opacity: 0.55; margin-top: 6px; }
-#tab-bar { display: flex; margin: 16px 0 12px; }
+.header-date { font-size: 11px; color: #ffffff; opacity: 0.55; margin-top: 5px; }
+#tab-bar { display: flex; gap: 12px; margin: 14px 0 0; }
 .tab-on, .tab-off {
   flex: 1; text-align: center; padding: 10px 0; font-size: 11px; color: #ffffff;
-  cursor: pointer; border: 2px solid #ffffff; text-transform: uppercase; letter-spacing: 1px;
+  cursor: pointer; border: 2px solid #ffffff;
 }
 .tab-on { font-weight: 600; background: var(--accent); }
 .tab-off { font-weight: 500; background: var(--panel); }
-.tab-content { display: none; }
+.tab-content { display: none; padding-top: 14px; }
 .tab-content.active { display: block; }
 .hero {
   background: var(--box-bg); border: 1px solid var(--box-line); border-radius: 8px;
   padding: 16px 12px; text-align: center; margin-bottom: 10px;
 }
 .hero-label {
-  font-size: 10px; text-transform: uppercase; letter-spacing: 1.4px;
-  color: #ffffff; opacity: 0.55;
+  font-size: 9px; text-transform: uppercase; letter-spacing: 2px;
+  color: #ffffff; opacity: 0.55; margin-bottom: 6px;
 }
 .hero-rec { font-size: 12px; color: #ffffff; opacity: 0.7; margin-top: 6px; }
 .pnl-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 10px; }
@@ -55,13 +55,17 @@ body {
 .pnl-box {
   background: var(--box-bg); border: 1px solid var(--box-line); border-radius: 4px;
   padding: 10px 4px; text-align: center;
+  display: flex; flex-direction: column; align-items: center;
 }
 .pnl-label {
   font-size: 9px; color: #ffffff; opacity: 0.5; text-transform: uppercase;
   letter-spacing: 1px; margin-bottom: 6px;
 }
-.hero-num { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 400; color: #ffffff; }
-.pnl-rec { font-size: 10px; color: #ffffff; opacity: 0.6; margin-top: 4px; }
+.hero-num { font-family: 'Oswald', sans-serif; font-size: 28px; font-weight: 400; color: #ffffff; }
+.pnl-rec {
+  font-size: 10px; color: #ffffff; opacity: 0.6; margin-top: 4px;
+  text-align: center; width: 100%;
+}
 .section-hdr {
   background: var(--band); border-left: 4px solid var(--accent);
   padding: 6px 12px; margin: 16px 0 8px; font-family: 'Oswald', sans-serif; font-size: 14px;
@@ -71,14 +75,11 @@ body {
   background: var(--card-bg); border: 1px solid var(--card-line); border-radius: 4px;
   padding: 11px 12px; margin-bottom: 8px;
 }
-.card-top { display: flex; align-items: center; gap: 10px; }
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
 .card-main { flex: 1; min-width: 0; }
-.card-teams {
-  font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500;
-  letter-spacing: 0.5px; text-transform: uppercase; color: #ffffff;
-}
-.card-bet { font-size: 13px; color: var(--hot); font-weight: 600; margin-top: 2px; }
-.card-info { font-size: 12px; color: #ffffff; opacity: 0.7; margin-top: 1px; }
+.card-teams { font-size: 14px; font-weight: 500; color: #ffffff; }
+.card-bet { font-size: 12px; color: var(--hot); font-weight: 600; }
+.card-info { font-size: 10px; color: #ffffff; opacity: 0.7; margin-top: 3px; }
 .card-leg {
   font-size: 12px; color: #ffffff; opacity: 0.82; margin-top: 3px;
   padding-left: 9px; border-left: 2px solid var(--accent);
@@ -138,14 +139,14 @@ body {
   padding: 22px 14px; text-align: center; font-size: 13px; color: #ffffff; opacity: 0.72;
 }
 .rg {
-  margin-top: 26px; padding-top: 14px; border-top: 1px solid var(--box-line);
-  font-size: 11px; color: #ffffff; opacity: 0.5; line-height: 1.7; text-align: center;
+  margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--box-line);
+  font-size: 8px; color: #ffffff; opacity: 0.5; line-height: 1.6; text-align: center;
 }
 .rg-strong { font-weight: 600; opacity: 0.85; letter-spacing: 0.4px; }
 </style></head><body><div class='wrap'>
 <div class='header'><div class='header-title'>The Inside Rip</div>
 <div class='header-sport'>National Football League</div>
-<div class='header-date'>Sunday, October 25 &middot; 03:02 PM ET</div></div>
+<div class='header-date'>Sunday, October 25 &middot; 05:38 PM ET</div></div>
 <div id='tab-bar'>
 <div class='tab-off' data-tab='overview'>Overview</div>
 <div class='tab-off' data-tab='results'>Results</div>
