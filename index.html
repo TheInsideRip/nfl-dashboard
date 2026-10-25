@@ -8,7 +8,8 @@
   --bg-main:#0e1c30; --bg-mid:#101f36; --bg-deep:#12233c;
   --bg-glow:rgba(61,111,158,0.32);
   --panel:#16283f; --band:#24507d; --accent:#3d6f9e; --hot:#f0b840;
-  --win:#2f9e5e; --loss:#c0392b; --neutral:#7d8b85;
+  --win:#2f9e5e; --loss:#c0392b;
+  --bub-win:#1a8a4a; --bub-loss:#c0392b; --bub-push:#5f6f68;
   --card-bg:rgba(255,255,255,0.05); --card-line:rgba(255,255,255,0.17);
   --box-bg:rgba(255,255,255,0.06); --box-line:rgba(255,255,255,0.15);
 }
@@ -95,37 +96,23 @@ body {
 .earlier-note {
   margin-top: 14px; text-align: center; font-size: 11px; color: #ffffff; opacity: 0.5;
 }
-/* THE BUBBLE IS THE BOARD'S OWN GROUND WITH A THIN WHITE LINE; THE NUMBER
-   CARRIES THE COLOUR -- college's 2026-08-29 redesign, ported here on his
-   instruction ("that exact bubble structure ... but the bubbles here are a
-   shade of blue, number colors, font, size, spacing otherwise the same").
-   The blue is not a new colour: `--bg-main` IS this board's deep navy, so
-   following college's own rule -- the bubble the same background as the
-   board -- turns it blue here and black there, off one declaration.
-   `nowrap` is not decoration: "6-5" breaks at the hyphen, and college
-   measured a Last-10 bubble in a narrow box stacking onto two lines.
-   `flex-shrink: 0` is ours and college has no equivalent; it changes no
-   pixel on its own and stops a bubble being squeezed inside a card row. */
+/* THE NBA SITE'S BUBBLE, 2026-10-25 ("exactly like the nba"): a filled green or red
+   badge, white digits, a 2px white line. Border, weight, padding and sizes are the NBA's
+   own values, copied unchanged. Two NFL lines stay because they change no pixel on a
+   bubble that fits: `nowrap` ("6-5" breaks at the hyphen in a narrow box, college
+   measured it) and `flex-shrink: 0` (stops a bubble being squeezed inside a card row). */
 .bubble {
   display: inline-flex; align-items: center; justify-content: center; color: #ffffff;
-  line-height: 1; border-radius: 4px; border: 1.5px solid #ffffff;
-  background: var(--bg-main); white-space: nowrap;
-  font-family: 'Oswald', sans-serif; font-weight: 500; flex-shrink: 0;
+  line-height: 1; border-radius: 4px; border: 2px solid #ffffff; white-space: nowrap;
+  font-family: 'Oswald', sans-serif; font-weight: 400; flex-shrink: 0;
 }
-/* VERTICAL PADDING IS UNEVEN ON PURPOSE AND THE NUMBERS ARE MEASURED, NOT
-   GUESSED -- college solved these in a browser against Oswald's real ink
-   metrics (2026-08-29): with line-height 1 the glyphs' ink centre sits
-   ~0.055em BELOW the box centre, because digits and caps have no descender,
-   and the extra bottom padding lifts the ink back. Taken across unchanged --
-   re-deriving them here would be inventing a second answer to a solved
-   question. */
-.bub-hero { padding: 6px 23px 12px; font-size: 50px; min-height: 60px; }
-.bub-lg { padding: 5px 12px 7px; font-size: 26px; min-height: 36px; }
-.bub-lg28 { padding: 5px 12px 7px; font-size: 28px; min-height: 38px; }
+.bub-hero { padding: 8px 22px 10px 22px; font-size: 50px; min-height: 60px; }
+.bub-lg { padding: 5px 12px 7px 12px; font-size: 26px; min-height: 36px; }
+.bub-lg28 { padding: 6px 12px; font-size: 28px; min-height: 38px; }
 .bub-md { padding: 3px 8px 5px; font-size: 18px; min-height: 26px; }
-.bg-g { color: var(--win); }
-.bg-r { color: var(--loss); }
-.bg-n { color: var(--neutral); }
+.bg-g { background: var(--bub-win); }
+.bg-r { background: var(--bub-loss); }
+.bg-n { background: var(--bub-push); }
 /* The season graph (`_chart`): college's box, with the fills read off the palette's own
    result colours rather than written into the SVG, so the palette stays one block. */
 .chart-box {
@@ -146,7 +133,7 @@ body {
 </style></head><body><div class='wrap'>
 <div class='header'><div class='header-title'>The Inside Rip</div>
 <div class='header-sport'>National Football League</div>
-<div class='header-date'>Sunday, October 25 &middot; 05:38 PM ET</div></div>
+<div class='header-date'>Sunday, October 25 &middot; 07:01 PM ET</div></div>
 <div id='tab-bar'>
 <div class='tab-off' data-tab='overview'>Overview</div>
 <div class='tab-off' data-tab='results'>Results</div>
